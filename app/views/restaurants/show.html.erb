@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Restaurant: <%= @restaurant.name %></h1>
+
+  <div>
+    <h3>Details:</h3>
+    <ul>
+      <li><strong>Address:</strong> <%= @restaurant.address %></li>
+      <li><strong>Phone number:</strong> <%= @restaurant.phone_number %></li>
+      <li><strong>Category:</strong> <%= @restaurant.category %></li>
+      <li><strong>Reviews:</strong>
+        <ul>
+          <% @restaurant.reviews.each do |review| %>
+           <li><%= review.restaurant.name %> was "<%= review.content %>"  <strong> <%= review.rating %>/5</strong></li>
+           <% end %>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <h4>  <%= link_to 'Back', restaurants_path %></h4>
+
+
+</div>
+
